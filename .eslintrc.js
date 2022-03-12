@@ -5,16 +5,12 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:tailwind/recommended',
   ],
-  plugins: ['jsx-a11y', 'html', 'react-hooks', '@typescript-eslint', 'prettier'],
-  settings: {
-    next: {
-      rootDir: ['apps/*/', 'packages/*/'],
-    },
-  },
+  ignorePatterns: ['**/node_modules/**', '**/dist/**'],
+  plugins: ['react', 'jsx-a11y', 'html', 'react-hooks', '@typescript-eslint', 'prettier'],
   rules: {
-    '@typescript-eslint/no-unused-vars': 'off',
-    'prettier/prettier': ['error', { singleQuote: true, jsxSingleQuote: false, printWidth: 120, parser: 'babel-ts' }],
-    'no-console': ['warn', { allow: ['warn', 'error', 'debug', 'table'] }],
     '@typescript-eslint/ban-ts-comment': 1,
+    '@typescript-eslint/no-unused-vars': 'off',
+    'no-console': ['warn', { allow: ['warn', 'error', 'debug', 'table'] }],
+    'prettier/prettier': ['error', { singleQuote: true, jsxSingleQuote: false, printWidth: 120, parser: 'babel-ts' }],
   },
 };

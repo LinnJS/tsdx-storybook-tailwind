@@ -1,11 +1,15 @@
 import React from 'react';
-import * as ReactDOM from 'react-dom';
-import { Default as Thing } from './Thing.stories';
+import { render, screen } from '@testing-library/react';
+import { composeStories } from '@storybook/testing-react';
+
+import * as stories from './Thing.stories';
+const { Default } = composeStories(stories);
 
 describe('Thing', () => {
-  it('renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<Thing />, div);
-    ReactDOM.unmountComponentAtNode(div);
+  it('renders Thing with default args', () => {
+    render(<Default />);
+    const thingDefault = screen.getByText(/the snozzberries taste like snozzberries/i);
+
+    expect(thingDefault).not.toBeNull();
   });
 });

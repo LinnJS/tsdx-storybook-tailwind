@@ -16,6 +16,9 @@
     "start:sb": "start-storybook -p 6006",
     "build:sb": "build-storybook",
     "test": "tsdx test --passWithNoTests",
+    "test:gen": "tsdx test --json --outputFile=.jest-test-results.json",
+    "test:watch": "tsdx test --json --outputFile=.jest-test-results.json --watch",
+    "test:all": "yarn test && yarn test:gen && yarn test:watch",
     "lint": "eslint src -c .eslintrc.js --ext js,jsx,ts,tsx",
     "lint:fix": "eslint src -c .eslintrc.js --ext js,jsx,ts,tsx --fix",
     "prepare": "tsdx build && husky install",
@@ -51,10 +54,13 @@
     "@storybook/addon-postcss": "^2.0.0",
     "@storybook/addons": "^6.4.19",
     "@storybook/react": "^6.4.19",
+    "@storybook/testing-react": "^1.2.3",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.5.0",
     "@tailwindcss/line-clamp": "^0.3.1",
     "@tailwindcss/typography": "^0.5.2",
+    "@testing-library/react": "^12.1.4",
+    "@types/jest": "^27.4.1",
     "@types/react": "^17.0.40",
     "@types/react-dom": "^17.0.13",
     "autoprefixer": "^10.4.2",
@@ -79,5 +85,8 @@
     "tslib": "^2.3.1",
     "typescript": "^4.6.2",
     "typescript-eslint": "^0.0.1-alpha.0"
+  },
+  "dependencies": {
+    "@storybook/addon-jest": "^6.4.19"
   }
 }
