@@ -13,14 +13,13 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
+    "start:sb": "start-storybook -p 6006",
+    "build:sb": "build-storybook",
     "test": "tsdx test --passWithNoTests",
     "lint": "eslint src -c .eslintrc.js --ext js,jsx,ts,tsx",
     "lint:fix": "eslint src -c .eslintrc.js --ext js,jsx,ts,tsx --fix",
-    "prepare": "tsdx build",
-    "size": "size-limit",
-    "analyze": "size-limit --why",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "prepare": "tsdx build && husky install",
+    "size": "size-limit"
   },
   "peerDependencies": {
     "react": ">=16"
