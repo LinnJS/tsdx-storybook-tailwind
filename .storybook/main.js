@@ -5,9 +5,10 @@ module.exports = {
     check: true, // type-check stories during Storybook build
   },
   "addons": [
-    "@storybook/addon-links",
     "@storybook/addon-essentials",
-    '@storybook/addon-jest',
+    '@storybook/addon-interactions',
+    "@storybook/addon-links",
+    '@storybook/addon-a11y',
     {
       name: "@storybook/addon-postcss",
       options: {
